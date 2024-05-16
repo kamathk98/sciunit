@@ -8,6 +8,7 @@ import sciunit2.libexec
 import os
 import shutil
 import subprocess
+import time
 
 
 # capture the execution of commands from cde.log
@@ -35,6 +36,7 @@ def shell(env=None):
 
 
 def repeat(pkgdir, orig, newargs):
+    start = time.time()
     if newargs:
         if not orig:
             raise CommandError(
@@ -57,4 +59,5 @@ def repeat(pkgdir, orig, newargs):
         return exc.returncode
     else:
         print(output.decode('utf-8'))
+        print("Time for repeat ", time.time() - start)
         return 0
