@@ -58,6 +58,8 @@ def repeat(pkgdir, orig, newargs):
 
         # this will cause issues if parallel repeat is run. 
         # Question: Which execution-id to commit in case of sciunit commit after parallel repeat
+        print(pkgdir)
+        print(parent_pkgdir)
         shutil.copy(os.path.join(pkgdir,'cde.log.1'), os.path.join(parent_pkgdir, 'cde.log.1'))
         shutil.copy(os.path.join(pkgdir,'cde.log'), os.path.join(parent_pkgdir, 'cde.log'))
 
