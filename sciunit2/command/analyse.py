@@ -32,9 +32,15 @@ class AnalyseCommand(AbstractCommand):
         # assuming dag file is provided
         # assume dot file - valid? or should it be a snakemake and we should create the dot? 
         G = nx.DiGraph(nx.nx_pydot.read_dot(file_path))
-        # generations = [sorted(generation) for generation in nx.topological_generations(G)]
+        
+        # for node, data in G.nodes(data=True):
+        #     print(f"Node: {node}, Data: {data}")
+        
+        idx = 1
         for generation in nx.topological_generations(G):
-            generation_with_labels = [(node, G.nodes[node].get('label', node)) for node in sorted(generation)]
-            print(generation_with_labels)
+            print("Step", idx)
+            for node in generation: 
+                print(G.nodes[node].get('label', node))
+            idx += 1
 
         
