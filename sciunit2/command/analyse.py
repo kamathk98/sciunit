@@ -30,7 +30,6 @@ class AnalyseCommand(AbstractCommand):
             raise CommandLineError
         
         # assuming dag file is provided
-        # assume dot file - valid? or should it be a snakemake and we should create the dot? 
         G = nx.DiGraph(nx.nx_pydot.read_dot(file_path))
         
         # for node, data in G.nodes(data=True):
