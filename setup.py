@@ -32,7 +32,7 @@ def _build_manpage(src, target):
 
 setup(
     name='sciunit2',
-    version=version.get_version(),
+    version='2.2.2',
     description='Sciunit command line',
     author='Zhihao Yuan, Tanu Malik',
     author_email='pr@sciunit.run',

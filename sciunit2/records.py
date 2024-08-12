@@ -125,6 +125,29 @@ class ExecutionManager(object):
         self.__pending = (last_id, Metadata(args))
         return self.__to_rev(last_id)
 
+
+    # def add2(self, args, parallel_id):
+    #     # old berkeleydb code
+    #     # try:
+    #     #     newid = self.__f.last()[0] + 1
+    #     # except DBNotFoundError:
+    #     #     newid = 1
+    #     # self.__pending = (newid, Metadata(args))
+    #     # return self.__to_rev(newid)
+    #     script = "select max(id) from revs"
+    #     last_id = parallel_id
+    #     try:
+    #         last_row_id = self.__c.execute(script).fetchone()[0]
+
+    #         if last_row_id != None:
+    #             last_id = last_row_id + parallel_id 
+
+    #     except Error as e:
+    #         print(e)
+
+    #     self.__pending = (last_id, Metadata(args))
+    #     return self.__to_rev(last_id)
+
     def commit(self, size):
         # __pending is the id, args pair for
         # the newly added execution via add()
