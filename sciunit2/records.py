@@ -125,6 +125,8 @@ class ExecutionManager(object):
         self.__pending = (last_id, Metadata(args))
         return self.__to_rev(last_id)
 
+
+
     def commit(self, size):
         # __pending is the id, args pair for
         # the newly added execution via add()
