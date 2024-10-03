@@ -13,9 +13,6 @@ from humanfriendly.terminal.spinners import Spinner
 # to the end-user during the entire time.
 class CommitMixin(object):
     def do_commit(self, pkgdir, rev, emgr, repo):
-        print("inside do_commit")
-        print(rev)
-        print(pkgdir)
         with Spinner(label='Committing') as sp:
             # adds the execution to de-duplication engine
             sz = repo.checkin(rev, pkgdir, sp)
