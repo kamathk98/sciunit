@@ -17,7 +17,7 @@ jobs:
         - name: install-tox
           run: pip3 install tox
         - name: test-with-tox
-          run: tox -e py310
+          run: tox
 
   sciunit-test-ubuntu-20-04-with-tox:
       runs-on: ubuntu-latest
